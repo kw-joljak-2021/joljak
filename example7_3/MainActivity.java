@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 //수정해요
+//다시수정해용
 public class MainActivity extends AppCompatActivity {
     TextView tvName, tvEmail, toastText;
     Button button1;
