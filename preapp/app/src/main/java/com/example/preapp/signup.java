@@ -10,6 +10,6 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-        setTitle("회원가입");
+        setTitle("회원가입1");
     }
 }
