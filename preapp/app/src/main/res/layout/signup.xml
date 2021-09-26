@@ -23,7 +23,7 @@
         android:text="아이디"/>
 
     <EditText
-        android:id="@+id/sign_idInput"
+        android:id="@+id/idText"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
@@ -34,13 +34,13 @@
         android:id="@+id/sign_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sign_idInput"
+        android:layout_below="@+id/idText"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="40dp"
         android:text="비밀번호" />
 
     <EditText
-        android:id="@+id/sign_pwInput"
+        android:id="@+id/passwordText"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_below="@+id/sign_pw"
@@ -51,24 +51,24 @@
         android:id="@+id/sign_pw1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sign_pwInput"
+        android:layout_below="@+id/passwordText"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="40dp"
-        android:text="비밀번호 확인" />
+        android:text="나이" />
 
     <EditText
-        android:id="@+id/sign_pwInput1"
+        android:id="@+id/ageText"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_below="@+id/sign_pw1"
         android:layout_centerHorizontal="true"
-        android:hint="Password" />
+        android:hint="age" />
 
     <Button
-        android:id="@+id/real_signupbtn"
+        android:id="@+id/RegisterButton"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/sign_pwInput1"
+        android:layout_below="@+id/ageText"
         android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true"
         android:text="회원가입"/>
