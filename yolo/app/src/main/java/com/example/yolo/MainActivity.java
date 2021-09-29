@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     boolean firstTimeYolo=false;
     Net tinyYolo;
 
-
+// 다시올림
     public void YOLO(View Button){
 
         if (startYolo == false){
