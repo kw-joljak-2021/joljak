@@ -32,6 +32,10 @@
         <activity android:name =".login"></activity>
         <activity android:name=".signup"></activity>
         <activity android:name=".practice1"></activity>
+        <activity android:name=".consonant"></activity>
+        <activity android:name=".vowel"></activity>
+        <activity android:name=".practice_camera"></activity>
+
     </application>
 
 

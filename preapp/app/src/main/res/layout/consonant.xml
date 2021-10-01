@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="50dp"
+        android:text="자음 선택"
+        android:textSize="35dp" />
+
+    <TableRow>
+        <Button
+            android:id="@+id/r"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="50dp"
+            android:text="ㄱ"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/s"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:text="ㄴ"
+            android:textSize="40dp" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/e"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:text="ㄷ"
+            android:textSize="40dp" />
+        <Button
+            android:id="@+id/f"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ㄹ"
+            android:textSize="40dp" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/a"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:text="ㅁ"
+            android:textSize="40dp" />
+        <Button
+            android:id="@+id/q"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ㅂ"
+            android:textSize="40dp" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/t"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:text="ㅅ"
+            android:textSize="40dp" />
+        <Button
+            android:id="@+id/d"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ㅇ"
+            android:textSize="40dp" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/w"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:text="ㅈ"
+            android:textSize="40dp" />
+        <Button
+            android:id="@+id/c"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ㅊ"
+            android:textSize="40dp" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/z"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:text="ㅋ"
+            android:textSize="40dp" />
+        <Button
+            android:id="@+id/x"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ㅌ"
+            android:textSize="40dp" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/v"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:text="ㅍ"
+            android:textSize="40dp" />
+        <Button
+            android:id="@+id/g"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ㅎ"
+            android:textSize="40dp" />
+    </TableRow>
+</TableLayout>
