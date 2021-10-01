@@ -16,8 +16,7 @@
         android:layout_marginTop="320dp"
         android:hint="ID"
         android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        />
+        android:drawableLeft="@drawable/ic_baseline_person_24"/>
 
     <EditText
         android:id="@+id/passwordText1"
