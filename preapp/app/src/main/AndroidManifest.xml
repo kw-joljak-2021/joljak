@@ -4,10 +4,11 @@
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
+        android:largeHeap="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/sutong"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/sutong_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PreApp"
         android:usesCleartextTraffic="true">
@@ -31,6 +32,10 @@
         <activity android:name =".login"></activity>
         <activity android:name=".signup"></activity>
         <activity android:name=".practice1"></activity>
+        <activity android:name=".consonant"></activity>
+        <activity android:name=".vowel"></activity>
+        <activity android:name=".practice_camera"></activity>
+
     </application>
 
 

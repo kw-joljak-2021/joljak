@@ -7,70 +7,31 @@
 
     <Button
         android:id="@+id/practice"
-        android:layout_width="150dp"
+        android:layout_width="370dp"
         android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="250dp"
-        android:text="연습"/>
+        android:fontFamily="@font/font2"
+        android:text="연습" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="252dp"
-            android:text="자음"/>
-
-        <ProgressBar
-            android:id="@+id/bar1"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_marginTop="273dp"
-            android:paddingTop="12dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="283dp"
-            android:text="모음" />
-
-        <ProgressBar
-            android:id="@+id/bar2"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="240dp"
-            android:layout_weight="2"
-            android:paddingTop="12dp" />
-    </LinearLayout>
-    
     <Button
         android:id="@+id/real"
         android:layout_width="370dp"
         android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="375dp"
-        android:text="실전"/>
+        android:fontFamily="@font/font2"
+        android:text="실전" />
 
     <Button
         android:id="@+id/game"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="372dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        android:text="게임"/>
+        android:fontFamily="@font/font2"
+        android:text="게임" />
 
 </RelativeLayout>

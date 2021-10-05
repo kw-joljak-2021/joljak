@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class login extends AppCompatActivity {
 
     Button practice, real, game;
-    ProgressBar bar1, bar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +20,7 @@ public class login extends AppCompatActivity {
         practice = (Button) findViewById(R.id.practice);
         real = (Button) findViewById(R.id.real);
         game = (Button) findViewById(R.id.game);
-        bar1 = (ProgressBar) findViewById(R.id.bar1);
-        bar2 = (ProgressBar) findViewById(R.id.bar2);
+
 
         practice.setOnClickListener(new View.OnClickListener() {
             @Override
