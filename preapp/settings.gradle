@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "pre app"
 include ':app'
+include ':opencv345'
