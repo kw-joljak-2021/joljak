@@ -2,9 +2,11 @@ package com.example.preapp;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Surface;
+import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +33,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -101,6 +104,7 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
         cameraBridgeViewBase=(JavaCameraView)findViewById(R.id.CameraView);
         cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         cameraBridgeViewBase.setCvCameraViewListener(this);
+        cameraBridgeViewBase.setCameraIndex(1);  // 셀카모드
 
         //system.loadLibrary(Core.NATIVE_LIBRARY_NAME)
         baseLoaderCallback=new BaseLoaderCallback(this) {
@@ -112,6 +116,8 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
 
                     case BaseLoaderCallback.SUCCESS:
                         cameraBridgeViewBase.enableView();
+
+                        //cameraBridgeViewBase.setDisplayOrientation(90);
                         break;
                     default:
                         super.onManagerConnected(status);
@@ -122,18 +128,21 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
     }
 
 
+
     //가장 중요한 함수, 여기서 캡쳐하거나 다른 이미지를 삽입하거나 rgb 바꾸거나 등등 수행(여러 트리거를 줄 수 있음)
     //Mat을 활용하여 이미지를 파이썬의 매트릭스 배열처럼 저장할 수 있다
     @Override
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
 
-        Mat frame=inputFrame.rgba();//프레임 받기기
+        Mat frame = inputFrame.rgba();//프레임 받기기
+
         if (startYolo==true) {
             //Imgproc을 이용해 이미지 프로세싱을 한다.
             Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGBA2RGB);//rgba 체계를 rgb로 변경
+
             //Imgproc.Canny(frame, frame, 100, 200);
             //Mat gray=Imgproc.cvtColor(frame, frame, Imgproc.COLOR_BGR2GRAY)
-            Mat imageBlob = Dnn.blobFromImage(frame, 0.00392, new Size(416, 416), new Scalar(0, 0, 0),/*swapRB*/false, /*crop*/false);
+            Mat imageBlob = Dnn.blobFromImage(frame, 0.00392, new Size(288, 288), new Scalar(0, 0, 0),/*swapRB*/false, /*crop*/false);
             //뉴런 네트워크에 이미지 넣기
 
             tinyYolo.setInput(imageBlob);
@@ -187,8 +196,8 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
                         int width = (int) (row.get(0, 2)[0] * frame.cols());
                         int height = (int) (row.get(0, 3)[0] * frame.rows());
 
-                        int left = centerX - width / 2;
-                        int top = centerY - height / 2;
+                        int left = (int)(centerX - width * 0.5);
+                        int top = (int) (centerY - height * 0.5);
 
                         clsIds.add((int) classIdPoint.x);
                         confs.add((float) confidence);
@@ -270,7 +279,7 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
     protected void onResume() {
         super.onResume();
         if (!OpenCVLoader.initDebug()){
-            Toast.makeText(getApplicationContext(),"There's a problem, yo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"There's a problem", Toast.LENGTH_SHORT).show();
         }
 
         else
