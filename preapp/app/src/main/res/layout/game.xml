@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#87CEEB">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/hand" />
+
+    <TextView
+        android:id="@+id/qize"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="300dp"
+        android:fontFamily="@font/font2"
+        android:textAlignment="center"
+        android:text="다음 지문자는 'ㄴ'에 대한
+        지문자이다."
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/o"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/font2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="430dp"
+        android:text="O" />
+
+    <Button
+        android:id="@+id/x"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/font2"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="430dp"
+        android:text="X" />
+
+
+</RelativeLayout>

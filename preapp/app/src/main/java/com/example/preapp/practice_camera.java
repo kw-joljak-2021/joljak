@@ -1,12 +1,15 @@
 package com.example.preapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +48,7 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
     Boolean startYolo=false;
     boolean firstTimeYolo=false;
     Net tinyYolo;
+    Button pre, post;
 
 
 
@@ -116,8 +120,6 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
 
                     case BaseLoaderCallback.SUCCESS:
                         cameraBridgeViewBase.enableView();
-
-                        //cameraBridgeViewBase.setDisplayOrientation(90);
                         break;
                     default:
                         super.onManagerConnected(status);

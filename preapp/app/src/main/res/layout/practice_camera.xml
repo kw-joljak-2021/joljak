@@ -4,15 +4,24 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".practice_camera">
+    tools:context=".practice_camera"
+    android:background="#87CEEB">
 <!-- linear로 변경-->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/hand" />
 
     <org.opencv.android.JavaCameraView
         android:id="@+id/CameraView"
-        android:layout_width="358dp"
-        android:layout_height="358dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerInParent="true"
         android:visibility="visible" />
 
     <!--    <Button-->
@@ -47,21 +56,23 @@
 <!--        android:textSize="50dp" />-->
 
 
-<!--    <Button-->
-<!--        android:id="@+id/pre"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="50dp"-->
-<!--        android:layout_marginTop="630dp"-->
-<!--        android:text="이전" />-->
+    <Button
+        android:id="@+id/pre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font2"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="630dp"
+        android:text="이전" />
 
-<!--    <Button-->
-<!--        android:id="@+id/post"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="270dp"-->
-<!--        android:layout_marginTop="630dp"-->
-<!--        android:text="이후" />-->
+    <Button
+        android:id="@+id/post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font2"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="630dp"
+        android:text="이후" />
 
 
 </RelativeLayout>

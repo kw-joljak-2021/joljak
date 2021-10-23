@@ -11,10 +11,10 @@ public class consonant extends AppCompatActivity {
 
     Button r;
 
-   /* Button[] consonantBtn = new Button[13];
+    Button[] consonantBtn = new Button[13];
     Integer[] consonantBtnId = {R.id.r, R.id.s, R.id.e, R.id.f, R.id.a, R.id.q, R.id.t,
             R.id.d, R.id.w, R.id.c, R.id.z, R.id.x, R.id.v, R.id.g};
-    int i;*/
+    int i;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -31,12 +31,12 @@ public class consonant extends AppCompatActivity {
             }
         });
 
-        /*// 버튼 객체 생성
+       /* // 버튼 객체 생성
         for (i = 0; i < consonantBtnId.length; i++){
             consonantBtn[i] = (Button) findViewById(consonantBtnId[i]);
-        }*/
+        }
 
-        /*for(i = 0; i < consonantBtnId.length; i++){
+        for(i = 0; i < consonantBtnId.length; i++){
             final int index;
             index = i;
 
