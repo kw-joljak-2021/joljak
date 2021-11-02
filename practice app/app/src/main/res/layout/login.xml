@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#87CEEB"
+    >
+
+    <Button
+        android:id="@+id/practice"
+        android:layout_width="197dp"
+        android:layout_height="62dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/font2"
+        android:text="연습" />
+
+
+    <Button
+        android:id="@+id/real"
+        android:layout_width="197dp"
+        android:layout_height="62dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="375dp"
+        android:fontFamily="@font/font2"
+        android:text="실전" />
+
+    <Button
+        android:id="@+id/game"
+        android:layout_width="197dp"
+        android:layout_height="62dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:fontFamily="@font/font2"
+        android:text="게임" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="276dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/choice" />
+
+</RelativeLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bio_scroll2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#87CEEB">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:text="모음 선택"
+            android:fontFamily="@font/font2"
+            android:textSize="50dp" />
+
+        <TableRow>
+            <Button
+                android:id="@+id/k"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="25dp"
+                android:text="ㅏ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/i"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:text="ㅑ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/j"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅓ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+
+            <Button
+                android:id="@+id/u"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅕ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/h"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅗ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/y"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅛ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/n"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅜ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/b"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅠ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/m"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅡ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/l"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅣ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/o"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅐ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/p"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅔ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/hl"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅚ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/nl"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅟ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/oo"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:text="ㅒ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+            <Button
+                android:id="@+id/pp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ㅖ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_marginLeft="65dp"
+                android:text="ㅢ"
+                android:fontFamily="@font/font2"
+                android:textSize="35dp" />
+        </TableRow>
+
+    </TableLayout></ScrollView>
