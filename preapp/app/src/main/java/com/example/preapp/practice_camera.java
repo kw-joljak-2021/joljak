@@ -4,12 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,6 +53,8 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
     boolean firstTimeYolo=false;
     Net tinyYolo;
     Button pre, post;
+    TextView text1;
+    ImageView hand,smile;
 
 
 
@@ -104,6 +110,17 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practice_camera);
+
+        byte[] byteArray = getIntent().getByteArrayExtra("image");
+        Bitmap image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+        ImageView ivImage = findViewById(R.id.imageView1);
+        ivImage.setImageBitmap(image);
+
+
+        Intent intent = getIntent();
+        String rid=intent.getExtras().getString("idr");
+
 
         cameraBridgeViewBase=(JavaCameraView)findViewById(R.id.CameraView);
         cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
@@ -170,7 +187,16 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
             //draw rectanglelist
             List<Rect> rects = new ArrayList<>();
 
+///////////////////////////////////////////////////////////////////////
+            //int i=0
+//            smile=(ImageView) findViewById(R.id.ans);
+//            hand=(ImageView) findViewById(R.id.imageView1);
+            //            if clsid=사진아이디하고 같으면 스마일 sad로 변환
+//            i=1
+//             if(i==0){smile.setImageResource(R.drawable.smile);
+//             else{smile.setImageResource(R.drawable.sad);
 
+///////////////////////////////////////////////////////////////////////
             for (int i = 0; i < result.size(); ++i) {
 
                 Mat level = result.get(i);
@@ -178,7 +204,6 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
                 for (int j = 0; j < level.rows(); ++j) { //iterate row
                     Mat row = level.row(j);
                     Mat scores = row.colRange(5, level.cols());
-
                     Core.MinMaxLocResult mm = Core.minMaxLoc(scores);
 
 
@@ -252,6 +277,10 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
                     Imgproc.putText(frame, cocoNames.get(idGuy) + " " + intConf + "%", box.tl(), Core.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255, 255, 0), 2);
 
                     Imgproc.rectangle(frame, box.tl(), box.br(), new Scalar(255, 0, 0), 2);
+
+                    text1.setText(cocoNames.get(idGuy));
+
+
                 }
             }
         }
@@ -315,6 +344,6 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
 
 
 
-        //아이콘 xml에서 사진 추가
-        // 카메라 java에서 코드 짜서 진행 후 xml 코드 지우기
-        // 카메라 밑에 통과 여부 표시 카메라 설치 후 진행
+//아이콘 xml에서 사진 추가
+// 카메라 java에서 코드 짜서 진행 후 xml 코드 지우기
+// 카메라 밑에 통과 여부 표시 카메라 설치 후 진행

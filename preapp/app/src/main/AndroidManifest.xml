@@ -44,6 +44,7 @@
         <activity android:name=".practice1"></activity>
         <activity android:name=".consonant"></activity>
         <activity android:name=".vowel"></activity>
+        <activity android:name="game"></activity>
         <activity
             android:name=".practice_camera"
             android:screenOrientation="portrait"></activity>

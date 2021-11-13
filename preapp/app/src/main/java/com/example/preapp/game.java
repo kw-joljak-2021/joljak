@@ -1,112 +1,217 @@
 package com.example.preapp;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Random;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.graphics.drawable.Drawable;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class game extends AppCompatActivity {
-    Button o_btn , x_btn;
-    ImageView hand_flag;
-    Random r;
-    int turn = 1;
-    List<CountryItem> list;  // 다른 코드에 구현
 
-    protected void onCreate(Bundle savedInstanceState){
+
+    String[] consonant = {"위의 지문자가\n지문자'ㄱ'입니까?", "위의 지문자가\n지문자'ㄴ'입니까?", "위의 지문자가\n지문자'ㄷ'입니까?", "위의 지문자가\n지문자'ㄹ'입니까?",
+            "위의 지문자가\n지문자'ㅁ'입니까?", "위의 지문자가\n지문자'ㅂ'입니까?", "위의 지문자가\n지문자'ㅅ'입니까?", "위의 지문자가\n지문자'ㅇ'입니까?", "위의 지문자가\n지문자'ㅈ'입니까?",
+            "위의 지문자가\n지문자'ㅊ'입니까?", "위의 지문자가\n지문자'ㅋ'입니까?",
+            "위의 지문자가\n지문자'ㅌ'입니까?", "위의 지문자가\n지문자'ㅍ'입니까?", "위의 지문자가\n지문자'ㅎ'입니까?"};
+
+    int[] imgs = new int[]{R.drawable.r, R.drawable.s,R.drawable.e,R.drawable.f,R.drawable.a,R.drawable.q,
+            R.drawable.t,R.drawable.d,R.drawable.w,R.drawable.c,R.drawable.z,R.drawable.x,R.drawable.v,R.drawable.g};
+
+    ImageView mImageView;
+    ImageView LifeImage;
+    ImageView LifeImage2;
+    ImageView LifeImage3;
+    TextView textView;
+    TextView textView2;
+    ImageButton imageButton;
+    ImageButton imageButton2;
+    ImageButton imageButton3;
+
+
+    int life = 3;
+    int turn = 1;
+    int max_turn = 20;
+    int torf;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
+        Init();
+        Game();
+    }
 
-        r = new Random();
+    void Init() {
+        mImageView = (ImageView) findViewById(R.id.imageView);
+        LifeImage = (ImageView) findViewById(R.id.LifeImage);
+        LifeImage2 = (ImageView) findViewById(R.id.LifeImage2);
+        LifeImage3 = (ImageView) findViewById(R.id.LifeImage3);
+        textView = (TextView) findViewById(R.id.text);
+        textView2 = (TextView) findViewById(R.id.text2);
+        imageButton = (ImageButton) findViewById(R.id.imageButton);
+        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        imageButton3 = (ImageButton) findViewById(R.id.imageButton3);
 
-        hand_flag = findViewById(R.id.hand);
-        o_btn = (Button) findViewById(R.id.o);
-        x_btn = (Button) findViewById(R.id.x);
 
-        list = new ArrayList<>();
-
-        //랜덤
-        Collections.shuffle(list);
-
-        newQuestion(turn);
-
-        o_btn.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //정답 체크
-                if(o_btn){
-                    if (turn < list.size()) {
-                        turn++;
-                        newQuestion(turn);
-                    }else{
-                        Toast.makeText(game.this, "퀴즈를 끝마치셨습니다!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }else{
-                    Toast.makeText(game.this, "틀렸습니다!", Toast.LENGTH_SHORT).show();
-                    //마지막 문제 체크
-                    if(turn < list.size()) {
-                        turn++;
-                        newQuestion(turn);
-                    }else{
-                        Toast.makeText(game.this, "게임에서 지셨습니다!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }
+            public void onClick(View v) {
+                imageButton2.setEnabled(false);
+                imageButton3.setEnabled(false);
+                Iscorrect(1);
+                countturn();
+                Game();
+                imageButton2.setEnabled(true);
+                imageButton3.setEnabled(true);
             }
         });
 
-        x_btn.setOnClickListener(new View.OnClickListener() {
+        imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //정답 체크
-                if(x_btn){
-                    if (turn < list.size()) {
-                        turn++;
-                        newQuestion(turn);
-                    }else{
-                        Toast.makeText(game.this, "퀴즈를 끝마치셨습니다!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }else{
-                    Toast.makeText(game.this, "틀렸습니다!", Toast.LENGTH_SHORT).show();
-                    //마지막 문제 체크
-                    if(turn < list.size()) {
-                        turn++;
-                        newQuestion(turn);
-                    }else{
-                        Toast.makeText(game.this, "게임에서 지셨습니다!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }
+            public void onClick(View v) {
+                imageButton2.setEnabled(false);
+                imageButton3.setEnabled(false);
+                Iscorrect(0);
+                countturn();
+                Game();
+                imageButton2.setEnabled(true);
+                imageButton3.setEnabled(true);
+            }
+
+        });
+
+        imageButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backbutton();
             }
         });
+    }
+
+    //질문 만들어줌
+    void Game() {
+
+
+        //1.랜덤 -> 옳은 값으로 간다/ 다른 값으로 간다.
+        torf = (int) (Math.random() * 2);
+        int imgIdx;
+        int questIdx;
+
+        //2. 조건d
+        // 옳은 값은
+        if (torf == 1) {
+            imgIdx = (int) (Math.random() * 2);
+            questIdx = imgIdx;
+        }
+        //다르게 할 때 값은
+        else {
+            do
+            {imgIdx = (int) (Math.random() * 2);
+            questIdx = (int) (Math.random() * 14);}
+            while(imgIdx==questIdx);
+        }
+        //3.ui
+
+        mImageView.setBackgroundResource(imgs[imgIdx]);
+        textView.setText(consonant[questIdx]);
+
 
     }
 
-    private void newQuestion(int number) {
-        //손 이미지를 스크린에 세팅한다.
-        hand_flag.setImageResource(list.get(number - 1).getImage());
+    void Iscorrect(int userchoice) {
 
-        int correct_answer = r.nextInt(4) + 1;
+        //사용자 정답 판정 해주는 애
+        if (userchoice != torf) {
+            //오답
+            life -= 1;
+            if (life==2)
+            {
+                LifeImage3.setColorFilter(Color.parseColor("#99999999"), PorterDuff.Mode.SRC_IN);
 
-        int firstButton = number -1;
-        int secondButton;
-
-        switch (correct_answer) {
-            case 1:
-                o_btn.setText(list.get(firstButton).getName());
-                do{
-                    secondButton = r.nextInt(list.size());
-                }
+            }
+            else if(life==1)
+            {
+                LifeImage2.setColorFilter(Color.parseColor("#99999999"), PorterDuff.Mode.SRC_IN);
+            }
+            else
+            {
+                LifeImage.setColorFilter(Color.parseColor("#99999999"), PorterDuff.Mode.SRC_IN);
+                exitbutton();
+            }
         }
     }
+
+    void countturn ()
+    {
+
+        if (turn == 19) {
+            //끝내 bbye~
+            exitbutton();
+        }
+        turn += 1;
+
+        textView2.setText(Integer.toString(turn));
+    }
+
+
+    void backbutton()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(game.this);
+        builder.setTitle("뒤로 가기");
+        builder.setMessage("뒤로 가시겠습니까?");
+        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), login.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("아니오", null);
+        builder.create().show();
+
+    }
+
+    void exitbutton()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(game.this);
+        builder.setTitle("게임 종료");
+        builder.setMessage(((turn)+1)+"/ 20 입니다.");
+        builder.setPositiveButton("종료", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), login.class);
+                finish();
+                startActivity(intent);
+
+            }
+        })
+                .setCancelable(false);
+        builder.setNegativeButton("다시 하기", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), game.class);
+                finish();
+                startActivity(intent);
+            }
+        })
+                .setCancelable(false);
+
+        builder.create().show();
+    }
+
 }
+
+
+
+
+

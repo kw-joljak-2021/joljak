@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class practice1 extends AppCompatActivity {
 
-    ProgressBar bar1, bar2;
     Button consonant, vowel;
 
     @Override
@@ -21,8 +20,7 @@ public class practice1 extends AppCompatActivity {
         
         Button consonant = (Button) findViewById(R.id.consonant);
         Button vowel = (Button) findViewById(R.id.vowel);
-        ProgressBar bar1 = (ProgressBar) findViewById(R.id.bar1);
-        ProgressBar bar2 = (ProgressBar) findViewById(R.id.bar2);
+
 
 
         // 자음 버튼 연결

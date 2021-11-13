@@ -6,12 +6,12 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="14"
-8-->C:\Users\SEC\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml
+8-->C:\Users\LG\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\SEC\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml
+9-->C:\Users\LG\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->C:\Users\SEC\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml:7:5-65
-11-->C:\Users\SEC\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml:7:22-62
+11-->C:\Users\LG\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml:7:5-65
+11-->C:\Users\LG\Documents\GitHub\joljak\preapp\opencv345\java\AndroidManifest.xml:7:22-62
 12
 13</manifest>
