@@ -112,13 +112,13 @@ public class game extends AppCompatActivity {
         //2. 조건d
         // 옳은 값은
         if (torf == 1) {
-            imgIdx = (int) (Math.random() * 2);
+            imgIdx = (int) (Math.random() * 14);
             questIdx = imgIdx;
         }
         //다르게 할 때 값은
         else {
             do
-            {imgIdx = (int) (Math.random() * 2);
+            {imgIdx = (int) (Math.random() * 14);
             questIdx = (int) (Math.random() * 14);}
             while(imgIdx==questIdx);
         }

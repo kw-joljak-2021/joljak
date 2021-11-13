@@ -125,7 +125,7 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
         cameraBridgeViewBase=(JavaCameraView)findViewById(R.id.CameraView);
         cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         cameraBridgeViewBase.setCvCameraViewListener(this);
-        cameraBridgeViewBase.setCameraIndex(1);  // 셀카모드
+//        cameraBridgeViewBase.setCameraIndex(1);  // 셀카모드
 
         //system.loadLibrary(Core.NATIVE_LIBRARY_NAME)
         baseLoaderCallback=new BaseLoaderCallback(this) {
@@ -277,8 +277,6 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
                     Imgproc.putText(frame, cocoNames.get(idGuy) + " " + intConf + "%", box.tl(), Core.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255, 255, 0), 2);
 
                     Imgproc.rectangle(frame, box.tl(), box.br(), new Scalar(255, 0, 0), 2);
-
-                    text1.setText(cocoNames.get(idGuy));
 
 
                 }
