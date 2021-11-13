@@ -20,13 +20,17 @@ import android.widget.Toast;
 public class game extends AppCompatActivity {
 
 
-    String[] consonant = {"위의 지문자가\n지문자'ㄱ'입니까?", "위의 지문자가\n지문자'ㄴ'입니까?", "위의 지문자가\n지문자'ㄷ'입니까?", "위의 지문자가\n지문자'ㄹ'입니까?",
+    String[] question = {"위의 지문자가\n지문자'ㄱ'입니까?", "위의 지문자가\n지문자'ㄴ'입니까?", "위의 지문자가\n지문자'ㄷ'입니까?", "위의 지문자가\n지문자'ㄹ'입니까?",
             "위의 지문자가\n지문자'ㅁ'입니까?", "위의 지문자가\n지문자'ㅂ'입니까?", "위의 지문자가\n지문자'ㅅ'입니까?", "위의 지문자가\n지문자'ㅇ'입니까?", "위의 지문자가\n지문자'ㅈ'입니까?",
             "위의 지문자가\n지문자'ㅊ'입니까?", "위의 지문자가\n지문자'ㅋ'입니까?",
-            "위의 지문자가\n지문자'ㅌ'입니까?", "위의 지문자가\n지문자'ㅍ'입니까?", "위의 지문자가\n지문자'ㅎ'입니까?"};
+            "위의 지문자가\n지문자'ㅌ'입니까?", "위의 지문자가\n지문자'ㅍ'입니까?", "위의 지문자가\n지문자'ㅎ'입니까?","위의 지문자가\n지문자'ㅏ'입니까?","위의 지문자가\n지문자'ㅑ'입니까?","위의 지문자가\n지문자'ㅓ'입니까?",
+            "위의 지문자가\n지문자'ㅕ'입니까?","위의 지문자가\n지문자'ㅗ'입니까?","위의 지문자가\n지문자'ㅛ'입니까?","위의 지문자가\n지문자'ㅜ'입니까?","위의 지문자가\n지문자'ㅠ'입니까?","위의 지문자가\n지문자'ㅡ'입니까?",
+            "위의 지문자가\n지문자'ㅣ'입니까?","위의 지문자가\n지문자'ㅐ'입니까?","위의 지문자가\n지문자'ㅔ'입니까?","위의 지문자가\n지문자'ㅚ'입니까?","위의 지문자가\n지문자'ㅟ'입니까?","위의 지문자가\n지문자'ㅒ'입니까?",
+            "위의 지문자가\n지문자'ㅖ'입니까?","위의 지문자가\n지문자'ㅢ'입니까?"};
 
     int[] imgs = new int[]{R.drawable.r, R.drawable.s,R.drawable.e,R.drawable.f,R.drawable.a,R.drawable.q,
-            R.drawable.t,R.drawable.d,R.drawable.w,R.drawable.c,R.drawable.z,R.drawable.x,R.drawable.v,R.drawable.g};
+            R.drawable.t,R.drawable.d,R.drawable.w,R.drawable.c,R.drawable.z,R.drawable.x,R.drawable.v,R.drawable.g,R.drawable.k, R.drawable.i, R.drawable.j, R.drawable.u, R.drawable.h, R.drawable.y,
+            R.drawable.n, R.drawable.b, R.drawable.m, R.drawable.l, R.drawable.o, R.drawable.p, R.drawable.hl, R.drawable.nl,R.drawable.oo,R.drawable.pp,R.drawable.ml};
 
     ImageView mImageView;
     ImageView LifeImage;
@@ -112,20 +116,20 @@ public class game extends AppCompatActivity {
         //2. 조건d
         // 옳은 값은
         if (torf == 1) {
-            imgIdx = (int) (Math.random() * 14);
+            imgIdx = (int) (Math.random() * 31);
             questIdx = imgIdx;
         }
         //다르게 할 때 값은
         else {
             do
-            {imgIdx = (int) (Math.random() * 14);
-            questIdx = (int) (Math.random() * 14);}
+            {imgIdx = (int) (Math.random() * 31);
+            questIdx = (int) (Math.random() * 31);}
             while(imgIdx==questIdx);
         }
         //3.ui
 
         mImageView.setBackgroundResource(imgs[imgIdx]);
-        textView.setText(consonant[questIdx]);
+        textView.setText(question[questIdx]);
 
 
     }

@@ -6,6 +6,8 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -54,8 +56,10 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
     Net tinyYolo;
     Button pre, post;
     TextView text1;
-    ImageView hand,smile;
-
+    ImageView hand,circle;
+    String id;
+//    String colorid;
+//    Intent colorintent = new Intent(getApplicationContext(), consonant.class);
 
 
     private static String getPath(String file, Context context){
@@ -117,10 +121,10 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
         ImageView ivImage = findViewById(R.id.imageView1);
         ivImage.setImageBitmap(image);
 
-
         Intent intent = getIntent();
-        String rid=intent.getExtras().getString("idr");
+        id=intent.getExtras().getString("id");
 
+        circle=findViewById(R.id.circle);
 
         cameraBridgeViewBase=(JavaCameraView)findViewById(R.id.CameraView);
         cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
@@ -265,19 +269,26 @@ public class practice_camera extends AppCompatActivity implements CameraBridgeVi
 
                     float conf = confs.get(idx);
 
-
-                    //List<String> cocoNames = Arrays.asList("a person", "a bicycle", "a motorbike", "an airplane", "a bus", "a train", "a truck", "a boat", "a traffic light", "a fire hydrant", "a stop sign", "a parking meter", "a car", "a bench", "a bird", "a cat", "a dog", "a horse", "a sheep", "a cow", "an elephant", "a bear", "a zebra", "a giraffe", "a backpack", "an umbrella", "a handbag", "a tie", "a suitcase", "a frisbee", "skis", "a snowboard", "a sports ball", "a kite", "a baseball bat", "a baseball glove", "a skateboard", "a surfboard", "a tennis racket", "a bottle", "a wine glass", "a cup", "a fork", "a knife", "a spoon", "a bowl", "a banana", "an apple", "a sandwich", "an orange", "broccoli", "a carrot", "a hot dog", "a pizza", "a doughnut", "a cake", "a chair", "a sofa", "a potted plant", "a bed", "a dining table", "a toilet", "a TV monitor", "a laptop", "a computer mouse", "a remote control", "a keyboard", "a cell phone", "a microwave", "an oven", "a toaster", "a sink", "a refrigerator", "a book", "a clock", "a vase", "a pair of scissors", "a teddy bear", "a hair drier", "a toothbrush");
                     List<String> cocoNames = Arrays.asList("r","s" , "e" , "f" , "a" , "q" , "t" , "d" ,
                             "w" , "c" , "z" , "x" , "v" , "g" , "k" , "i" , "j" , "u" ,
                             "h" , "y" , "n" , "b" , "m" , "l", "o", "p", "hl", "nl",
                             "oo", "pp", "ml", "delete", "space");
                     int intConf = (int) (conf * 100);
 
-
                     Imgproc.putText(frame, cocoNames.get(idGuy) + " " + intConf + "%", box.tl(), Core.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255, 255, 0), 2);
 
                     Imgproc.rectangle(frame, box.tl(), box.br(), new Scalar(255, 0, 0), 2);
 
+                    if(cocoNames.get(idGuy).equals(id))
+                    {
+                        circle.setColorFilter(Color.parseColor("#FFF500"), PorterDuff.Mode.SRC_IN);
+
+//                        colorintent.putExtra(colorid, "1");
+//                        setContentView(R.layout.consonant);
+//                        Button consonantBtn=(Button) findViewById(imgs[idGuy]);
+
+
+                    }
 
                 }
             }
